@@ -32,23 +32,8 @@ customers = {
 
 customerid = input("Enter a customer ID: ")
 
-Customer = fc.Customer
+restaurant = fc.Restaurant()
 
-print(f"Customer Name: {customers[customerid][0]}")
-print(f"Phone: {customers[customerid][3]}")
-
-
-for key in dict:
-    if dict[key][3] == int(customerid):
-        print(f"Ordered Item: {dict[key][1]}   Price: ${dict[key][2]}")
-
-for key, value in dict.items():
-    if value[3] == int(customerid):
-        order_total += value[2]
-
-print(f"Total Cost: ${order_total}")
-
-if customers[customerid][4] == "True":
-    discount = order_total * 0.2
-    print(f"Member Discount: ${discount}")
-    print(f"Total Cost after discount: ${order_total-discount}")
+customerid = input("Enter a customer ID: ")
+fc.restaurant.get_customer_info(customerid)
+fc.restaurant.get_order_total(customerid)
